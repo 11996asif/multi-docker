@@ -20,7 +20,7 @@ jobs:
       # Build and test the client with Dockerfile.dev
       - name: Build and Test Client
         run: |
-          docker build -t rallycoding/react-test -f ./client/Dockerfile.dev ./client
+          docker build -t rallycoding/react-test -f ./client/Dockerfile ./client
           docker run -e CI=true rallycoding/react-test npm test
 
       # Build Docker images for all services
