@@ -20,21 +20,21 @@ jobs:
       # Build and test the client with Dockerfile.dev
       - name: Build and Test Client
         run: |
-          docker build -t rallycoding/react-test -f ./client/Dockerfile ./client
-          docker run -e CI=true rallycoding/react-test npm test
+          docker build -t Lucifer15/react-test -f ./client/Dockerfile ./client
+          docker run -e CI=true Lucifer15/react-test npm test
 
       # Build Docker images for all services
       - name: Build Docker Images
         run: |
-          docker build -t rallycoding/multi-client ./client
-          docker build -t rallycoding/multi-nginx ./nginx
-          docker build -t rallycoding/multi-server ./server
-          docker build -t rallycoding/multi-worker ./worker
+          docker build -t Lucifer15/multi-client ./client
+          docker build -t Lucifer15/multi-nginx ./nginx
+          docker build -t Lucifer15/multi-server ./server
+          docker build -t Lucifer15/multi-worker ./worker
 
       # Push Docker images to DockerHub
       - name: Push Docker Images
         run: |
-          docker push rallycoding/multi-client
-          docker push rallycoding/multi-nginx
-          docker push rallycoding/multi-server
-          docker push rallycoding/multi-worker
+          docker push Lucifer15/multi-client
+          docker push Lucifer15/multi-nginx
+          docker push Lucifer15/multi-server
+          docker push Lucifer15/multi-worker
